@@ -1,18 +1,26 @@
 <template>
-  <h1>${heading}</h1>
+  <nav class="navbar navbar-daNrk bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand">Todo-App</a>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <h1 class="text-center">${heading}</h1>
 
   <form submit.trigger="addTodo()">
-    <input type="text" value.bind="todoDescription">
-    <button type="submit" disabled.bind="!todoDescription">AddTodo</button>
+      <label for="addTodoInput" class="form-label">Neues Todo hinzufügen</label>
+      <input type="text" value.bind="todoDescription" id="addTodoInput" class="form-control" placeholder="Neues Todo hinzufügen">
+      <button class="btn btn-primary" type="submit" disabled.bind="!todoDescription">Speichern</button>
   </form>
 
-  <ul>
-    <li repeat.for="todo of todos">
-      <input type="checkbox" checked.bind="todo.done">
-      <span css="text-decoration: ${todo.done ? 'line-through' : 'none'}">
-        ${todo.description}
-      </span>
-      <button click.trigger="removeTodo(todo)">Remove</button>
-    </li>
-  </ul>
+  <div class="form-check" repeat.for="todo of todos">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked.bind="todo.done">
+    <label class="form-check-label" for="flexCheckDefault" css="text-decoration: ${todo.done ? 'line-through' : 'none'}">
+      ${todo.description}
+    </label>
+    <button class="btn btn-danger"click.trigger="removeTodo(todo)">Löschen</button>
+  </div>
 </template>

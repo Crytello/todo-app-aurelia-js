@@ -13,10 +13,11 @@ describe('Stage App Component', () => {
 
   afterEach(() => component.dispose());
 
-  it('should render message', done => {
+  it('should check for title todo', done => {
     component.create(bootstrap).then(() => {
       const view = component.element;
-      expect(view.textContent.trim()).toBe('Hello World!');
+      console.log(view);
+      expect(view.textContent.trim()).toBe('Todos');
       done();
     }).catch(e => {
       fail(e);
