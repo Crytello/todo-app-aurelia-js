@@ -4,7 +4,7 @@ This project is bootstrapped by [aurelia-cli](https://github.com/aurelia/cli).
 
 For more information, go to https://aurelia.io/docs/cli/webpack
 
-# Setup
+## Setup
 
 1. `npm i aurelia-cli -g`
 2. `npm install`
