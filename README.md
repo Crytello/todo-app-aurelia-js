@@ -4,6 +4,12 @@ This project is bootstrapped by [aurelia-cli](https://github.com/aurelia/cli).
 
 For more information, go to https://aurelia.io/docs/cli/webpack
 
+# Setup
+
+1. `npm i aurelia-cli -g`
+2. `npm install`
+3. `au run --open`
+
 ## Run dev app
 
 Run `npm start`, then open `http://localhost:8080`
